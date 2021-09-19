@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>spring on code less</title>
+    <link>https://moliao5d.github.io/tags/spring/</link>
+    <description>Recent content in spring on code less</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 30 Oct 2016 11:02:05 +0800</lastBuildDate><atom:link href="https://moliao5d.github.io/tags/spring/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>spring事务</title>
+      <link>https://moliao5d.github.io/post/spring-transaction/</link>
+      <pubDate>Sun, 30 Oct 2016 11:02:05 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/spring-transaction/</guid>
+      <description>acid属性: a:原子性 c:一致性 i:隔离性 d:持久性 事务隔离级别: 隔离级别 说明 问题 read uncommit 读取未提交的 脏读 幻读 不可重复读 read commit 读取已经提交的 幻读</description>
+    </item>
+    
+    <item>
+      <title>spring事件</title>
+      <link>https://moliao5d.github.io/post/6957b88b-3d38-4fe0-a818-6e755e97cc28/</link>
+      <pubDate>Wed, 12 Oct 2016 10:51:44 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/6957b88b-3d38-4fe0-a818-6e755e97cc28/</guid>
+      <description>spring中的事件都是ApplicationContextEvent的子类 通过实现ApplicationListener接口来覆盖onAp</description>
+    </item>
+    
+  </channel>
+</rss>

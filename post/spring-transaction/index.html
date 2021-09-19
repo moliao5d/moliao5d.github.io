@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>spring事务 - code less</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="moliao5d" /><meta name="description" content="acid属性: a:原子性 c:一致性 i:隔离性 d:持久性 事务隔离级别: 隔离级别 说明 问题 read uncommit 读取未提交的 脏读 幻读 不可重复读 read commit 读取已经提交的 幻读" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.88.1 with theme even" />
+
+
+<link rel="canonical" href="https://moliao5d.github.io/post/spring-transaction/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="spring事务" />
+<meta property="og:description" content="acid属性: a:原子性 c:一致性 i:隔离性 d:持久性 事务隔离级别: 隔离级别 说明 问题 read uncommit 读取未提交的 脏读 幻读 不可重复读 read commit 读取已经提交的 幻读" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://moliao5d.github.io/post/spring-transaction/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2016-10-30T11:02:05+08:00" />
+<meta property="article:modified_time" content="2016-10-30T11:02:05+08:00" />
+
+<meta itemprop="name" content="spring事务">
+<meta itemprop="description" content="acid属性: a:原子性 c:一致性 i:隔离性 d:持久性 事务隔离级别: 隔离级别 说明 问题 read uncommit 读取未提交的 脏读 幻读 不可重复读 read commit 读取已经提交的 幻读"><meta itemprop="datePublished" content="2016-10-30T11:02:05+08:00" />
+<meta itemprop="dateModified" content="2016-10-30T11:02:05+08:00" />
+<meta itemprop="wordCount" content="430">
+<meta itemprop="keywords" content="spring,java," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="spring事务"/>
+<meta name="twitter:description" content="acid属性: a:原子性 c:一致性 i:隔离性 d:持久性 事务隔离级别: 隔离级别 说明 问题 read uncommit 读取未提交的 脏读 幻读 不可重复读 read commit 读取已经提交的 幻读"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">code less</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/#" class="logo">code less</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about">关于</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">spring事务</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-10-30 </span>
+        <div class="post-category">
+            <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>acid属性:
+a:原子性  c:一致性   i:隔离性    d:持久性</p>
+<p>事务隔离级别:</p>
+<table>
+<thead>
+<tr>
+<th>隔离级别</th>
+<th>说明</th>
+<th>问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>read uncommit</td>
+<td>读取未提交的</td>
+<td>脏读 幻读 不可重复读</td>
+</tr>
+<tr>
+<td>read commit</td>
+<td>读取已经提交的</td>
+<td>幻读 不可重复读</td>
+</tr>
+<tr>
+<td>repeatable read</td>
+<td>可以重复读 锁定读取的行</td>
+<td>幻读</td>
+</tr>
+<tr>
+<td>serializable</td>
+<td>串行 锁表</td>
+<td>解决一切事物并发 ,效率低</td>
+</tr>
+</tbody>
+</table>
+<p>事务传播:</p>
+<p>required :需要事务</p>
+<p>required new:需要新的事务</p>
+<p>support:有就以事务方式运行,没有就以非事务方式运行</p>
+<p>not support:不需要事务 ,有事务就把事务挂起</p>
+<p>mandatory:需要事务 没有事务就抛异常</p>
+<p>never:不需要事务 有事务就抛出异常</p>
+<p>nested:嵌套事务 ,子事务嵌套在父事务内执行,在进入子事务前父事务建立save point 子事务如果抛出异常回滚,父事务可以catch这个异常回滚到save point .父事务如果回滚 子事务也要回滚  父事务不提交 子事务不能提交</p>
+<p>实际应用场景:</p>
+<p>异常记录到数据库?  require_new</p>
+<p>spring 事务失效? spring 增强的方法,带有注解的方法,本类实例调用是无效的,一定要通过注入本类实例来调用,默认只回滚runtimeException
+否则无效 如@Transaction @Async</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">moliao5d</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2016-10-30
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/spring/">spring</a>
+          <a href="/tags/java/">java</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/mongo-sql/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">MongoDB聚合操作和Sql对应关系</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/sessionandcookies/">
+            <span class="next-text nav-default">session &amp; cookie</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:moliao5d@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://www.github.io" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.bilibili.com" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://moliao5d.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+ 
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+ 
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>moliao5d</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

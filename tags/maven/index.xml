@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>maven on code less</title>
+    <link>https://moliao5d.github.io/tags/maven/</link>
+    <description>Recent content in maven on code less</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 08 Oct 2016 10:07:57 +0800</lastBuildDate><atom:link href="https://moliao5d.github.io/tags/maven/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>maven手动安装jar包到本地仓库</title>
+      <link>https://moliao5d.github.io/post/maven-manually-install-jar/</link>
+      <pubDate>Sat, 08 Oct 2016 10:07:57 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/maven-manually-install-jar/</guid>
+      <description>安装方式 在ide的maven项目中运行maven 命令 1 install:install-file -DgroupId=net.sourceforge.jexcelapi -DartifactId=jxl -Dversion=2.6.12 -Dpackaging=jar -Dfile=F:/jxl-2.6.12.jar 在控制台运行,cd到项目的pom文件所在目录 ,运行maven安装命令 1 mvn install:install-file</description>
+    </item>
+    
+  </channel>
+</rss>

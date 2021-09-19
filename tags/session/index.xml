@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>session on code less</title>
+    <link>https://moliao5d.github.io/tags/session/</link>
+    <description>Recent content in session on code less</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 07 Mar 2017 11:18:14 +0800</lastBuildDate><atom:link href="https://moliao5d.github.io/tags/session/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>tomcat redis session</title>
+      <link>https://moliao5d.github.io/post/2d45a3c5-a7d2-4f45-9f02-f5099aa1a866/</link>
+      <pubDate>Tue, 07 Mar 2017 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/2d45a3c5-a7d2-4f45-9f02-f5099aa1a866/</guid>
+      <description>在集群情况下,把session保存到redis服务器统一管理,防止nginx再负载均衡时候将客户端请求分发到不同的tomcat,导致sess</description>
+    </item>
+    
+  </channel>
+</rss>

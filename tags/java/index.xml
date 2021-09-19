@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>java on code less</title>
+    <link>https://moliao5d.github.io/tags/java/</link>
+    <description>Recent content in java on code less</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 19 Apr 2020 11:18:14 +0800</lastBuildDate><atom:link href="https://moliao5d.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>java调用动态链接库</title>
+      <link>https://moliao5d.github.io/post/java-dyn-lib/</link>
+      <pubDate>Sun, 19 Apr 2020 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/java-dyn-lib/</guid>
+      <description>加载方式 Java的System.load 和 System.loadLibrary都可以用来加载库文件 System.load 通过绝对路径来加载 System.loadLibrary 通过库名称来加载 System.loadLibrary (&amp;ldquo;atomic&amp;rdquo;);</description>
+    </item>
+    
+    <item>
+      <title>日志简化写法</title>
+      <link>https://moliao5d.github.io/post/logger/</link>
+      <pubDate>Mon, 26 Jun 2017 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/logger/</guid>
+      <description>写日志时候总是定义个静态的字段,从工厂类中获得日志实例,这一行代码就和getter setter一样没有没有任何技术含量,怎么样才能避免这一行</description>
+    </item>
+    
+    <item>
+      <title>tomcat redis session</title>
+      <link>https://moliao5d.github.io/post/2d45a3c5-a7d2-4f45-9f02-f5099aa1a866/</link>
+      <pubDate>Tue, 07 Mar 2017 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/2d45a3c5-a7d2-4f45-9f02-f5099aa1a866/</guid>
+      <description>在集群情况下,把session保存到redis服务器统一管理,防止nginx再负载均衡时候将客户端请求分发到不同的tomcat,导致sess</description>
+    </item>
+    
+    <item>
+      <title>shutdownHook jvm关闭钩子操作</title>
+      <link>https://moliao5d.github.io/post/shutdownhook/</link>
+      <pubDate>Thu, 02 Mar 2017 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/shutdownhook/</guid>
+      <description>在程序关闭或者退出时候,执行一些扫尾操作 1 2 3 4 5 6 Runtime.getRuntime().addShutdownHook(new Thread(){ @Override public void run() { System.out.println(&amp;#34;shut down........&amp;#34;); } }); 适用于以下情况: user presses ctrl+c on the command prompt //使用ctrl+c 中断程序 System.exit(int) method is invoked</description>
+    </item>
+    
+    <item>
+      <title>spring事务</title>
+      <link>https://moliao5d.github.io/post/spring-transaction/</link>
+      <pubDate>Sun, 30 Oct 2016 11:02:05 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/spring-transaction/</guid>
+      <description>acid属性: a:原子性 c:一致性 i:隔离性 d:持久性 事务隔离级别: 隔离级别 说明 问题 read uncommit 读取未提交的 脏读 幻读 不可重复读 read commit 读取已经提交的 幻读</description>
+    </item>
+    
+    <item>
+      <title>session &amp; cookie</title>
+      <link>https://moliao5d.github.io/post/sessionandcookies/</link>
+      <pubDate>Sat, 15 Oct 2016 11:02:05 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/sessionandcookies/</guid>
+      <description>cookie保存在客户端中 只能保存字符串 不支持中文 第一次请求创建cookie将 cookie发送到客户端保存,以后请求将浏览器的cookie数</description>
+    </item>
+    
+    <item>
+      <title>threadLocal</title>
+      <link>https://moliao5d.github.io/post/3567b88b-3d38-4fe0-a818-6e755e97cc12/</link>
+      <pubDate>Wed, 12 Oct 2016 10:58:57 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/3567b88b-3d38-4fe0-a818-6e755e97cc12/</guid>
+      <description>static ThreadLocal local=new ThreadLocal(); local.set(T t); local.get();获得这个线程安全的变量 该类提供了线程局部 (thread-local) 变量。这些变量不同于它们的普通对应物，因为访问某个变量（通过其</description>
+    </item>
+    
+    <item>
+      <title>spring事件</title>
+      <link>https://moliao5d.github.io/post/6957b88b-3d38-4fe0-a818-6e755e97cc28/</link>
+      <pubDate>Wed, 12 Oct 2016 10:51:44 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/6957b88b-3d38-4fe0-a818-6e755e97cc28/</guid>
+      <description>spring中的事件都是ApplicationContextEvent的子类 通过实现ApplicationListener接口来覆盖onAp</description>
+    </item>
+    
+  </channel>
+</rss>

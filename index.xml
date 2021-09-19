@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>code less</title>
+    <link>https://moliao5d.github.io/</link>
+    <description>Recent content on code less</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 11 Feb 2021 14:40:12 +0800</lastBuildDate><atom:link href="https://moliao5d.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://moliao5d.github.io/about/</link>
+      <pubDate>Fri, 03 Sep 2021 21:26:27 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/about/</guid>
+      <description>深圳打工人</description>
+    </item>
+    
+    <item>
+      <title>田园生活</title>
+      <link>https://moliao5d.github.io/post/flower2/</link>
+      <pubDate>Thu, 11 Feb 2021 14:40:12 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/flower2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>江汉关</title>
+      <link>https://moliao5d.github.io/post/jianghanguan/</link>
+      <pubDate>Sun, 13 Dec 2020 15:34:34 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/jianghanguan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jar包启动报签名错误</title>
+      <link>https://moliao5d.github.io/post/7b92e5da-6f25-458a-ba26-afd7d1a8371c/</link>
+      <pubDate>Fri, 20 Nov 2020 16:20:58 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/7b92e5da-6f25-458a-ba26-afd7d1a8371c/</guid>
+      <description>使用maven-shade-plugin 打fat-jar,启动报错java.lang.SecurityException: Invalid signature file digest for Manifest main attributes 原</description>
+    </item>
+    
+    <item>
+      <title>通过jdk工具jstat预估gc时间</title>
+      <link>https://moliao5d.github.io/post/gc-time/</link>
+      <pubDate>Fri, 20 Nov 2020 16:20:58 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/gc-time/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>塘朗山夜景</title>
+      <link>https://moliao5d.github.io/post/tanglang-night/</link>
+      <pubDate>Sun, 08 Nov 2020 15:34:34 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/tanglang-night/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>海上生明月</title>
+      <link>https://moliao5d.github.io/post/moon/</link>
+      <pubDate>Sat, 07 Nov 2020 14:40:12 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/moon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>站着别动,我去给你买几个橘子</title>
+      <link>https://moliao5d.github.io/post/orange/</link>
+      <pubDate>Sat, 07 Nov 2020 14:40:12 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/orange/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mysql线程情况</title>
+      <link>https://moliao5d.github.io/post/mysql-process/</link>
+      <pubDate>Thu, 28 May 2020 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/mysql-process/</guid>
+      <description>查看mysql线程 在mysql 客户端中:show processlist\G; 直接在bash 中执行:mysql -uroot -pxxxx -h127.0.0.1 -P10208 -e &amp;lsquo;show processlist\G&amp;rsquo; 查看所有线程的状态:mysql -uroot -pxxxx -h127.0.0.1 -P10208 -e &amp;lsquo;show processlist\G&amp;rsquo;</description>
+    </item>
+    
+    <item>
+      <title>java调用动态链接库</title>
+      <link>https://moliao5d.github.io/post/java-dyn-lib/</link>
+      <pubDate>Sun, 19 Apr 2020 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/java-dyn-lib/</guid>
+      <description>加载方式 Java的System.load 和 System.loadLibrary都可以用来加载库文件 System.load 通过绝对路径来加载 System.loadLibrary 通过库名称来加载 System.loadLibrary (&amp;ldquo;atomic&amp;rdquo;);</description>
+    </item>
+    
+    <item>
+      <title>Flower</title>
+      <link>https://moliao5d.github.io/post/flower/</link>
+      <pubDate>Wed, 26 Feb 2020 15:34:34 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/flower/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssh端口转发</title>
+      <link>https://moliao5d.github.io/post/ssh-forward/</link>
+      <pubDate>Sat, 02 Nov 2019 16:20:58 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/ssh-forward/</guid>
+      <description>动态socks ,在本地建立代理,使得可以访问远程服务器内网的资源 1 ssh -C -f -N -D 7080 root@st 将本地端口转发到远程端口,访问本地端口将转发到远程的对应端口</description>
+    </item>
+    
+    <item>
+      <title>mysql binlog恢复数据</title>
+      <link>https://moliao5d.github.io/post/mysql-binlog-restore-data/</link>
+      <pubDate>Fri, 02 Aug 2019 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/mysql-binlog-restore-data/</guid>
+      <description>binlog 记录了数据库的写操作 开启binlog 在my.cnf文件中mysqld 中添加配置 1 2 # binlog 文件名前缀 log-bin=mysql-bin 重启mysql,会在mysql数据目录生</description>
+    </item>
+    
+    <item>
+      <title>mysql大批量更新优化</title>
+      <link>https://moliao5d.github.io/post/mysql-update-opt/</link>
+      <pubDate>Wed, 08 May 2019 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/mysql-update-opt/</guid>
+      <description>mybatis大量数据更新使用foreach,执行,耗时10s 改用insert into table on duplicate update 耗时200ms</description>
+    </item>
+    
+    <item>
+      <title>mysql执行计划</title>
+      <link>https://moliao5d.github.io/post/explain-sql/</link>
+      <pubDate>Fri, 21 Dec 2018 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/explain-sql/</guid>
+      <description>sql执行顺序: from on where group having select order (1)id: id大的查询优先 ,id相同从上往下执行 (2)selectType: 查询类型 simple:简单查询(没有子查询或者join) primar</description>
+    </item>
+    
+    <item>
+      <title>ajax顺序请求</title>
+      <link>https://moliao5d.github.io/post/ajax-serial/</link>
+      <pubDate>Tue, 06 Feb 2018 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/ajax-serial/</guid>
+      <description>多个ajax以一定顺序执行 a1 a2 执行完之后才执行a3 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 var a1=$.get(&amp;#34;/sys/ad/ajaxList?a1&amp;#34;,function () { console.log(&amp;#34;a1&amp;#34;); },&amp;#34;json&amp;#34;); var a2=$.get(&amp;#34;/sys/ad/ajaxList?a2&amp;#34;,function () { console.log(&amp;#34;a2&amp;#34;); },&amp;#34;json&amp;#34;); $.when(a1,a2).done(function () { console.log(&amp;#34;a1 a2 is done&amp;#34;); var a3=$.get(&amp;#34;/sys/ad/ajaxList?a3&amp;#34;,function () { console.log(&amp;#34;a3&amp;#34;); },&amp;#34;json&amp;#34;);</description>
+    </item>
+    
+    <item>
+      <title>ie的大坑</title>
+      <link>https://moliao5d.github.io/post/fuck-ie/</link>
+      <pubDate>Tue, 06 Feb 2018 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/fuck-ie/</guid>
+      <description>维护一个老系统发现的ie坑 表单中有且仅有一个input:submit 时候,回车会触发表单提交 input 加上disabled属性后 ie8不会传递这个表</description>
+    </item>
+    
+    <item>
+      <title>MongoDB分片配置</title>
+      <link>https://moliao5d.github.io/post/mongo-shard/</link>
+      <pubDate>Wed, 27 Sep 2017 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/mongo-shard/</guid>
+      <description>做分片 之后各节点角色: 路由,数据节点,配置节点 其中路由 数据 配置节点都可以做集群配置,mongo db新版本要求在分片时候配置节点必须做集群,防</description>
+    </item>
+    
+    <item>
+      <title>MongoDB集群配置</title>
+      <link>https://moliao5d.github.io/post/mongo-replset/</link>
+      <pubDate>Wed, 27 Sep 2017 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/mongo-replset/</guid>
+      <description>一个mongo集群中的节点角色 :主节点 副节点 仲裁节点 集群时候,如果主节点挂掉,则剩下的节点进行选举,选举出新的主节点 最小构成是：primar</description>
+    </item>
+    
+    <item>
+      <title>日志简化写法</title>
+      <link>https://moliao5d.github.io/post/logger/</link>
+      <pubDate>Mon, 26 Jun 2017 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/logger/</guid>
+      <description>写日志时候总是定义个静态的字段,从工厂类中获得日志实例,这一行代码就和getter setter一样没有没有任何技术含量,怎么样才能避免这一行</description>
+    </item>
+    
+    <item>
+      <title>前端SPA</title>
+      <link>https://moliao5d.github.io/post/3098ca7a-208c-4e6f-a3a9-0152a4ab5e2a/</link>
+      <pubDate>Tue, 25 Apr 2017 10:51:44 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/3098ca7a-208c-4e6f-a3a9-0152a4ab5e2a/</guid>
+      <description>ajax pushState replaceState onpopstate iframe pushstate 配合ajax.load window.history.pushState(&amp;quot;&amp;quot;,&amp;quot;&amp;quot;,&amp;ldquo;http://localhost/a.html&amp;rdquo;); $(&amp;quot;#container&amp;quot;).load(&amp;ldquo;http://localhost/a.html&amp;rdquo;); replaceState 配合iframe replaceState要写在子iframe页面上, 当iframe加载完成时候修改父</description>
+    </item>
+    
+    <item>
+      <title>tomcat redis session</title>
+      <link>https://moliao5d.github.io/post/2d45a3c5-a7d2-4f45-9f02-f5099aa1a866/</link>
+      <pubDate>Tue, 07 Mar 2017 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/2d45a3c5-a7d2-4f45-9f02-f5099aa1a866/</guid>
+      <description>在集群情况下,把session保存到redis服务器统一管理,防止nginx再负载均衡时候将客户端请求分发到不同的tomcat,导致sess</description>
+    </item>
+    
+    <item>
+      <title>shutdownHook jvm关闭钩子操作</title>
+      <link>https://moliao5d.github.io/post/shutdownhook/</link>
+      <pubDate>Thu, 02 Mar 2017 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/shutdownhook/</guid>
+      <description>在程序关闭或者退出时候,执行一些扫尾操作 1 2 3 4 5 6 Runtime.getRuntime().addShutdownHook(new Thread(){ @Override public void run() { System.out.println(&amp;#34;shut down........&amp;#34;); } }); 适用于以下情况: user presses ctrl+c on the command prompt //使用ctrl+c 中断程序 System.exit(int) method is invoked</description>
+    </item>
+    
+    <item>
+      <title>微信扫码登录你的网站</title>
+      <link>https://moliao5d.github.io/post/wechat-oauth-login/</link>
+      <pubDate>Thu, 02 Mar 2017 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/wechat-oauth-login/</guid>
+      <description>当然要使用微信扫码登录,首先需要建立微信openid和网站账号的绑定关系,此处不表 主要用的的接口是微信的网页授权接口: https://open.weixin.qq.com/connect/oauth2/authorize?appid=APPID&amp;amp;redirect_uri=REDIRECT_URI&amp;amp;response_type=code&amp;amp;scope=SCOPE&amp;amp;state=STATE#wechat_redirect 在用户使用微信打开这</description>
+    </item>
+    
+    <item>
+      <title>MongoDB更新数组元素</title>
+      <link>https://moliao5d.github.io/post/mongo-update/</link>
+      <pubDate>Thu, 23 Feb 2017 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/mongo-update/</guid>
+      <description>MongoDB 更新数组元素,有时不确定要修改的元素的索引,此时使用 $占位符 避免先查询再修改 1 coll.updateOne(Filters.and(Filters.eq(&amp;#34;_id&amp;#34;,&amp;#34;id1234&amp;#34;),Filters.eq(&amp;#34;arr._id&amp;#34;,&amp;#34;id4567&amp;#34;)),Updates.set(&amp;#34;arr.$.field1&amp;#34;,&amp;#34;value1&amp;#34;)); 此方法只能修改第一个匹配的数组元素 如有多个数组元素要修改,</description>
+    </item>
+    
+    <item>
+      <title>MongoDB聚合操作和Sql对应关系</title>
+      <link>https://moliao5d.github.io/post/mongo-sql/</link>
+      <pubDate>Thu, 23 Feb 2017 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/mongo-sql/</guid>
+      <description>sql Mongo desc where match 条件过滤 group by group 分组 having match 过滤 select project 选择特定的列,投影 order by sort 排序 limit limit skip 分页 sum sum 求和 count sum 计数 join lookup 表连接</description>
+    </item>
+    
+    <item>
+      <title>spring事务</title>
+      <link>https://moliao5d.github.io/post/spring-transaction/</link>
+      <pubDate>Sun, 30 Oct 2016 11:02:05 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/spring-transaction/</guid>
+      <description>acid属性: a:原子性 c:一致性 i:隔离性 d:持久性 事务隔离级别: 隔离级别 说明 问题 read uncommit 读取未提交的 脏读 幻读 不可重复读 read commit 读取已经提交的 幻读</description>
+    </item>
+    
+    <item>
+      <title>session &amp; cookie</title>
+      <link>https://moliao5d.github.io/post/sessionandcookies/</link>
+      <pubDate>Sat, 15 Oct 2016 11:02:05 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/sessionandcookies/</guid>
+      <description>cookie保存在客户端中 只能保存字符串 不支持中文 第一次请求创建cookie将 cookie发送到客户端保存,以后请求将浏览器的cookie数</description>
+    </item>
+    
+    <item>
+      <title>threadLocal</title>
+      <link>https://moliao5d.github.io/post/3567b88b-3d38-4fe0-a818-6e755e97cc12/</link>
+      <pubDate>Wed, 12 Oct 2016 10:58:57 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/3567b88b-3d38-4fe0-a818-6e755e97cc12/</guid>
+      <description>static ThreadLocal local=new ThreadLocal(); local.set(T t); local.get();获得这个线程安全的变量 该类提供了线程局部 (thread-local) 变量。这些变量不同于它们的普通对应物，因为访问某个变量（通过其</description>
+    </item>
+    
+    <item>
+      <title>spring事件</title>
+      <link>https://moliao5d.github.io/post/6957b88b-3d38-4fe0-a818-6e755e97cc28/</link>
+      <pubDate>Wed, 12 Oct 2016 10:51:44 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/6957b88b-3d38-4fe0-a818-6e755e97cc28/</guid>
+      <description>spring中的事件都是ApplicationContextEvent的子类 通过实现ApplicationListener接口来覆盖onAp</description>
+    </item>
+    
+    <item>
+      <title>git基本操作</title>
+      <link>https://moliao5d.github.io/post/git-op/</link>
+      <pubDate>Sat, 08 Oct 2016 10:40:49 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/git-op/</guid>
+      <description>基本操作 git add 添加文件到仓库 git commit -m &amp;ldquo;some msg&amp;rdquo; 提交到仓库 got log查看日志 回退操作 首先，Git必须知道当前版本是哪个版本，在Git中，用HEAD表示当前</description>
+    </item>
+    
+    <item>
+      <title>maven手动安装jar包到本地仓库</title>
+      <link>https://moliao5d.github.io/post/maven-manually-install-jar/</link>
+      <pubDate>Sat, 08 Oct 2016 10:07:57 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/maven-manually-install-jar/</guid>
+      <description>安装方式 在ide的maven项目中运行maven 命令 1 install:install-file -DgroupId=net.sourceforge.jexcelapi -DartifactId=jxl -Dversion=2.6.12 -Dpackaging=jar -Dfile=F:/jxl-2.6.12.jar 在控制台运行,cd到项目的pom文件所在目录 ,运行maven安装命令 1 mvn install:install-file</description>
+    </item>
+    
+    <item>
+      <title>mysql行列转换</title>
+      <link>https://moliao5d.github.io/post/mysql-row-col-swap/</link>
+      <pubDate>Fri, 07 Oct 2016 10:20:52 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/mysql-row-col-swap/</guid>
+      <description>行转列 数据: 查询结果: 查询sql: 1 2 3 4 5 6 7 8 9 10 11 12 SELECT y AS &amp;#39;年份&amp;#39;, SUM(CASE m WHEN 1 THEN sale ELSE 0 END) AS &amp;#39;一月&amp;#39;, SUM(CASE m</description>
+    </item>
+    
+    <item>
+      <title>First</title>
+      <link>https://moliao5d.github.io/post/first/</link>
+      <pubDate>Tue, 03 May 2016 21:27:37 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/first/</guid>
+      <description>1 hhahhahaa 1.1 结合科打瞌睡的科技 1.1.1 肯德基</description>
+    </item>
+    
+  </channel>
+</rss>

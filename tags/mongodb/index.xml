@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mongodb on code less</title>
+    <link>https://moliao5d.github.io/tags/mongodb/</link>
+    <description>Recent content in mongodb on code less</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 27 Sep 2017 11:18:14 +0800</lastBuildDate><atom:link href="https://moliao5d.github.io/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MongoDB分片配置</title>
+      <link>https://moliao5d.github.io/post/mongo-shard/</link>
+      <pubDate>Wed, 27 Sep 2017 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/mongo-shard/</guid>
+      <description>做分片 之后各节点角色: 路由,数据节点,配置节点 其中路由 数据 配置节点都可以做集群配置,mongo db新版本要求在分片时候配置节点必须做集群,防</description>
+    </item>
+    
+    <item>
+      <title>MongoDB集群配置</title>
+      <link>https://moliao5d.github.io/post/mongo-replset/</link>
+      <pubDate>Wed, 27 Sep 2017 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/mongo-replset/</guid>
+      <description>一个mongo集群中的节点角色 :主节点 副节点 仲裁节点 集群时候,如果主节点挂掉,则剩下的节点进行选举,选举出新的主节点 最小构成是：primar</description>
+    </item>
+    
+    <item>
+      <title>MongoDB更新数组元素</title>
+      <link>https://moliao5d.github.io/post/mongo-update/</link>
+      <pubDate>Thu, 23 Feb 2017 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/mongo-update/</guid>
+      <description>MongoDB 更新数组元素,有时不确定要修改的元素的索引,此时使用 $占位符 避免先查询再修改 1 coll.updateOne(Filters.and(Filters.eq(&amp;#34;_id&amp;#34;,&amp;#34;id1234&amp;#34;),Filters.eq(&amp;#34;arr._id&amp;#34;,&amp;#34;id4567&amp;#34;)),Updates.set(&amp;#34;arr.$.field1&amp;#34;,&amp;#34;value1&amp;#34;)); 此方法只能修改第一个匹配的数组元素 如有多个数组元素要修改,</description>
+    </item>
+    
+    <item>
+      <title>MongoDB聚合操作和Sql对应关系</title>
+      <link>https://moliao5d.github.io/post/mongo-sql/</link>
+      <pubDate>Thu, 23 Feb 2017 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/mongo-sql/</guid>
+      <description>sql Mongo desc where match 条件过滤 group by group 分组 having match 过滤 select project 选择特定的列,投影 order by sort 排序 limit limit skip 分页 sum sum 求和 count sum 计数 join lookup 表连接</description>
+    </item>
+    
+  </channel>
+</rss>

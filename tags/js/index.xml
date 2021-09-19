@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>js on code less</title>
+    <link>https://moliao5d.github.io/tags/js/</link>
+    <description>Recent content in js on code less</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 06 Feb 2018 11:18:14 +0800</lastBuildDate><atom:link href="https://moliao5d.github.io/tags/js/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ajax顺序请求</title>
+      <link>https://moliao5d.github.io/post/ajax-serial/</link>
+      <pubDate>Tue, 06 Feb 2018 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/ajax-serial/</guid>
+      <description>多个ajax以一定顺序执行 a1 a2 执行完之后才执行a3 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 var a1=$.get(&amp;#34;/sys/ad/ajaxList?a1&amp;#34;,function () { console.log(&amp;#34;a1&amp;#34;); },&amp;#34;json&amp;#34;); var a2=$.get(&amp;#34;/sys/ad/ajaxList?a2&amp;#34;,function () { console.log(&amp;#34;a2&amp;#34;); },&amp;#34;json&amp;#34;); $.when(a1,a2).done(function () { console.log(&amp;#34;a1 a2 is done&amp;#34;); var a3=$.get(&amp;#34;/sys/ad/ajaxList?a3&amp;#34;,function () { console.log(&amp;#34;a3&amp;#34;); },&amp;#34;json&amp;#34;);</description>
+    </item>
+    
+    <item>
+      <title>ie的大坑</title>
+      <link>https://moliao5d.github.io/post/fuck-ie/</link>
+      <pubDate>Tue, 06 Feb 2018 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/fuck-ie/</guid>
+      <description>维护一个老系统发现的ie坑 表单中有且仅有一个input:submit 时候,回车会触发表单提交 input 加上disabled属性后 ie8不会传递这个表</description>
+    </item>
+    
+  </channel>
+</rss>

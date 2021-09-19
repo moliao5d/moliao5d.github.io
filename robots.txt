@@ -1,0 +1,4 @@
+User-agent: *
+Sitemap: https://moliao5d.github.io/sitemap.xml
+Allow: /post/
+Disallow: /

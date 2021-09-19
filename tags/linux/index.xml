@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on code less</title>
+    <link>https://moliao5d.github.io/tags/linux/</link>
+    <description>Recent content in linux on code less</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 02 Nov 2019 16:20:58 +0800</lastBuildDate><atom:link href="https://moliao5d.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ssh端口转发</title>
+      <link>https://moliao5d.github.io/post/ssh-forward/</link>
+      <pubDate>Sat, 02 Nov 2019 16:20:58 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/ssh-forward/</guid>
+      <description>动态socks ,在本地建立代理,使得可以访问远程服务器内网的资源 1 ssh -C -f -N -D 7080 root@st 将本地端口转发到远程端口,访问本地端口将转发到远程的对应端口</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>MongoDB集群配置 - code less</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="moliao5d" /><meta name="description" content="一个mongo集群中的节点角色 :主节点 副节点 仲裁节点 集群时候,如果主节点挂掉,则剩下的节点进行选举,选举出新的主节点 最小构成是：primar" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.88.1 with theme even" />
+
+
+<link rel="canonical" href="https://moliao5d.github.io/post/mongo-replset/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="MongoDB集群配置" />
+<meta property="og:description" content="一个mongo集群中的节点角色 :主节点 副节点 仲裁节点 集群时候,如果主节点挂掉,则剩下的节点进行选举,选举出新的主节点 最小构成是：primar" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://moliao5d.github.io/post/mongo-replset/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-09-27T11:18:14+08:00" />
+<meta property="article:modified_time" content="2017-09-27T11:18:14+08:00" />
+
+<meta itemprop="name" content="MongoDB集群配置">
+<meta itemprop="description" content="一个mongo集群中的节点角色 :主节点 副节点 仲裁节点 集群时候,如果主节点挂掉,则剩下的节点进行选举,选举出新的主节点 最小构成是：primar"><meta itemprop="datePublished" content="2017-09-27T11:18:14+08:00" />
+<meta itemprop="dateModified" content="2017-09-27T11:18:14+08:00" />
+<meta itemprop="wordCount" content="854">
+<meta itemprop="keywords" content="mongodb," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MongoDB集群配置"/>
+<meta name="twitter:description" content="一个mongo集群中的节点角色 :主节点 副节点 仲裁节点 集群时候,如果主节点挂掉,则剩下的节点进行选举,选举出新的主节点 最小构成是：primar"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">code less</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/#" class="logo">code less</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about">关于</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">MongoDB集群配置</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-09-27 </span>
+        <div class="post-category">
+            <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>一个mongo集群中的节点角色 :主节点  副节点  仲裁节点
+集群时候,如果主节点挂掉,则剩下的节点进行选举,选举出新的主节点</p>
+<ol>
+<li>
+<p>最小构成是：primary，secondary，arbiter，一般部署是：primary，2 secondary。</p>
+</li>
+<li>
+<p>成员数应该为奇数，如果为偶数的情况下添加arbiter，arbiter不保存数据，只投票。</p>
+</li>
+<li>
+<p>最大50 members，但是只能有 7 voting members，其他是non-voting members。</p>
+</li>
+</ol>
+<p>副本集heartbeat ping 2秒一次，10秒没有回应认为down了。</p>
+<p>Priority最高的被选举为主库，Priority 0的不能升为主。</p>
+<p>Optime最高的从库才能被选为主库。</p>
+<p>主库需要能连到其他从库，1主2从的情况下，down掉2台的情况下，不会选举出主库。</p>
+<p>多个mongo实例的安装
+各节点配置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"># version=3.4
+#数据节点
+dbpath=D:\DB\mongo_10001\data\db
+#数据库路径 
+logpath=D:\DB\mongo_10001\data\log\mongo.log
+#日志输出文件路径  
+logappend=true
+#错误日志采用追加模式  
+journal=true
+#启用日志文件，默认启用  
+quiet=true
+#这个选项可以过滤掉一些无用的日志信息，若需要调试使用请设置为false  
+port=27017
+#端口号
+
+replSet=mongoSet        //集群名
+shardsvr=true
+rest=true
+httpinterface=true
+</code></pre></td></tr></table>
+</div>
+</div><p>启动所有节点
+在任意节点运行以下命令,运行后该节点将成为集群的master节点</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">use admin;
+var conf={
+  _id : &#34;mongoSet&#34;,     //这个和配置文件中的集群名字一致
+  members: [
+    {
+      _id : 0,
+      host : &#34;127.0.0.1:27017&#34;
+        /*
+        ,priority: 5   //优先级
+        ,salveDelay:0   //延迟
+        ,votes:1        //可投的票数
+        ,hidden:false   //对用户不可见
+        ,buildIndexes    //建立索引
+        ,arbiterOnly:true         //仅作为仲裁节点
+        */
+    },
+	{
+      _id : 1,
+      host : &#34;127.0.0.1:27018&#34;
+    },
+	{
+      _id : 2,
+      host : &#34;127.0.0.1:27019&#34;
+    },
+	{
+      _id : 3,
+      host : &#34;127.0.0.1:27020&#34;,
+	  arbiterOnly:true         //仅作为仲裁节点
+    }
+  ]
+}
+rs.initiate(conf);
+</code></pre></td></tr></table>
+</div>
+</div><p>在主节点运行db.isMaster(); 可以判断是否是master节点,还可以看到整个集群的一些信息
+运行结果</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">{ 
+    &#34;hosts&#34; : [
+        &#34;127.0.0.1:27017&#34;, 
+        &#34;127.0.0.1:27018&#34;, 
+        &#34;127.0.0.1:27019&#34;
+    ], 
+    &#34;arbiters&#34; : [
+        &#34;127.0.0.1:27020&#34;
+    ], 
+    &#34;setName&#34; : &#34;mongoSet&#34;, 
+    &#34;setVersion&#34; : NumberInt(1), 
+    &#34;ismaster&#34; : true, 
+    &#34;secondary&#34; : false, 
+    &#34;primary&#34; : &#34;127.0.0.1:27017&#34;, 
+    &#34;me&#34; : &#34;127.0.0.1:27017&#34;, 
+    &#34;electionId&#34; : ObjectId(&#34;7fffffff0000000000000003&#34;), 
+    &#34;lastWrite&#34; : {
+        &#34;opTime&#34; : {
+            &#34;ts&#34; : Timestamp(1506512477, 1), 
+            &#34;t&#34; : NumberLong(3)
+        }, 
+        &#34;lastWriteDate&#34; : ISODate(&#34;2017-09-27T11:41:17.000+0000&#34;)
+    }, 
+    &#34;maxBsonObjectSize&#34; : NumberInt(16777216), 
+    &#34;maxMessageSizeBytes&#34; : NumberInt(48000000), 
+    &#34;maxWriteBatchSize&#34; : NumberInt(1000), 
+    &#34;localTime&#34; : ISODate(&#34;2017-09-27T11:41:18.584+0000&#34;), 
+    &#34;maxWireVersion&#34; : NumberInt(5), 
+    &#34;minWireVersion&#34; : NumberInt(0), 
+    &#34;readOnly&#34; : false, 
+    &#34;ok&#34; : NumberInt(1)
+}
+
+</code></pre></td></tr></table>
+</div>
+</div><p>另外可以通过rs.add添加节点   rs.remove来移除节点</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">moliao5d</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2017-09-27
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/mongodb/">mongodb</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/mongo-shard/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">MongoDB分片配置</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/logger/">
+            <span class="next-text nav-default">日志简化写法</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:moliao5d@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://www.github.io" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.bilibili.com" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://moliao5d.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+ 
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+ 
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>moliao5d</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on code less</title>
+    <link>https://moliao5d.github.io/tags/git/</link>
+    <description>Recent content in git on code less</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 08 Oct 2016 10:40:49 +0800</lastBuildDate><atom:link href="https://moliao5d.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>git基本操作</title>
+      <link>https://moliao5d.github.io/post/git-op/</link>
+      <pubDate>Sat, 08 Oct 2016 10:40:49 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/git-op/</guid>
+      <description>基本操作 git add 添加文件到仓库 git commit -m &amp;ldquo;some msg&amp;rdquo; 提交到仓库 got log查看日志 回退操作 首先，Git必须知道当前版本是哪个版本，在Git中，用HEAD表示当前</description>
+    </item>
+    
+  </channel>
+</rss>

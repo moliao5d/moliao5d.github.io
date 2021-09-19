@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>web on code less</title>
+    <link>https://moliao5d.github.io/tags/web/</link>
+    <description>Recent content in web on code less</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 06 Feb 2018 11:18:14 +0800</lastBuildDate><atom:link href="https://moliao5d.github.io/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ajax顺序请求</title>
+      <link>https://moliao5d.github.io/post/ajax-serial/</link>
+      <pubDate>Tue, 06 Feb 2018 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/ajax-serial/</guid>
+      <description>多个ajax以一定顺序执行 a1 a2 执行完之后才执行a3 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 var a1=$.get(&amp;#34;/sys/ad/ajaxList?a1&amp;#34;,function () { console.log(&amp;#34;a1&amp;#34;); },&amp;#34;json&amp;#34;); var a2=$.get(&amp;#34;/sys/ad/ajaxList?a2&amp;#34;,function () { console.log(&amp;#34;a2&amp;#34;); },&amp;#34;json&amp;#34;); $.when(a1,a2).done(function () { console.log(&amp;#34;a1 a2 is done&amp;#34;); var a3=$.get(&amp;#34;/sys/ad/ajaxList?a3&amp;#34;,function () { console.log(&amp;#34;a3&amp;#34;); },&amp;#34;json&amp;#34;);</description>
+    </item>
+    
+    <item>
+      <title>ie的大坑</title>
+      <link>https://moliao5d.github.io/post/fuck-ie/</link>
+      <pubDate>Tue, 06 Feb 2018 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/fuck-ie/</guid>
+      <description>维护一个老系统发现的ie坑 表单中有且仅有一个input:submit 时候,回车会触发表单提交 input 加上disabled属性后 ie8不会传递这个表</description>
+    </item>
+    
+    <item>
+      <title>前端SPA</title>
+      <link>https://moliao5d.github.io/post/3098ca7a-208c-4e6f-a3a9-0152a4ab5e2a/</link>
+      <pubDate>Tue, 25 Apr 2017 10:51:44 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/3098ca7a-208c-4e6f-a3a9-0152a4ab5e2a/</guid>
+      <description>ajax pushState replaceState onpopstate iframe pushstate 配合ajax.load window.history.pushState(&amp;quot;&amp;quot;,&amp;quot;&amp;quot;,&amp;ldquo;http://localhost/a.html&amp;rdquo;); $(&amp;quot;#container&amp;quot;).load(&amp;ldquo;http://localhost/a.html&amp;rdquo;); replaceState 配合iframe replaceState要写在子iframe页面上, 当iframe加载完成时候修改父</description>
+    </item>
+    
+    <item>
+      <title>tomcat redis session</title>
+      <link>https://moliao5d.github.io/post/2d45a3c5-a7d2-4f45-9f02-f5099aa1a866/</link>
+      <pubDate>Tue, 07 Mar 2017 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/2d45a3c5-a7d2-4f45-9f02-f5099aa1a866/</guid>
+      <description>在集群情况下,把session保存到redis服务器统一管理,防止nginx再负载均衡时候将客户端请求分发到不同的tomcat,导致sess</description>
+    </item>
+    
+    <item>
+      <title>微信扫码登录你的网站</title>
+      <link>https://moliao5d.github.io/post/wechat-oauth-login/</link>
+      <pubDate>Thu, 02 Mar 2017 11:18:14 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/wechat-oauth-login/</guid>
+      <description>当然要使用微信扫码登录,首先需要建立微信openid和网站账号的绑定关系,此处不表 主要用的的接口是微信的网页授权接口: https://open.weixin.qq.com/connect/oauth2/authorize?appid=APPID&amp;amp;redirect_uri=REDIRECT_URI&amp;amp;response_type=code&amp;amp;scope=SCOPE&amp;amp;state=STATE#wechat_redirect 在用户使用微信打开这</description>
+    </item>
+    
+    <item>
+      <title>session &amp; cookie</title>
+      <link>https://moliao5d.github.io/post/sessionandcookies/</link>
+      <pubDate>Sat, 15 Oct 2016 11:02:05 +0800</pubDate>
+      
+      <guid>https://moliao5d.github.io/post/sessionandcookies/</guid>
+      <description>cookie保存在客户端中 只能保存字符串 不支持中文 第一次请求创建cookie将 cookie发送到客户端保存,以后请求将浏览器的cookie数</description>
+    </item>
+    
+  </channel>
+</rss>
